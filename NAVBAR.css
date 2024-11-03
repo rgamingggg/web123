@@ -1,0 +1,89 @@
+:root {
+    scroll-behavior: smooth;
+}
+
+*, html {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: url('Designer (1).jpeg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    background-color: #efefef20;
+    display: flex;
+    justify-content: center; /* Centers the navbar content */
+    align-items: center;
+    padding: 1rem 2rem;
+    backdrop-filter: blur(30px);
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 2rem; /* Increase gap for more space between items */
+    list-style: none;
+    margin: 0 auto; /* Center items horizontally */
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-family: montserrat;
+    color: #efefef;
+    font-weight: 600;
+    padding: 0.5rem 1rem; /* Add padding for better spacing */
+    transition: color 300ms, border-bottom 300ms;
+    border-bottom: 1px solid transparent;
+}
+
+nav ul li a:hover {
+    color: #ff0000;
+    border-bottom: 3px solid #ff0000;
+}
+
+.menu-toggle {
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: #efefef;
+    cursor: pointer;
+    margin-right: auto;
+    display: none;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        display: none;
+        background-color: #26262680;
+        backdrop-filter: blur(30px);
+        padding: 1rem 0;
+        align-items: center;
+    }
+
+    nav ul.visible {
+        display: flex;
+    }
+
+    nav ul li {
+        text-align: center;
+        width: 100%;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
